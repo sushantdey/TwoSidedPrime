@@ -1,5 +1,11 @@
+# service functions responsible for executing the business logic and evaluate the result
 from math import sqrt
 from math import floor
+
+# accept the request from controller
+# call other service functions (if required) to execute business logic
+# return evaluated result back to controller function
+# obtain all possible numbers by left and right-truncation
 
 
 def check_two_sided_prime(num: int):
@@ -13,6 +19,9 @@ def check_two_sided_prime(num: int):
         if not (check_prime(temp)):
             return False
     return True
+
+
+# check whether each number (original, left-truncated and right-truncated) is prime
 
 
 def check_prime(num):
