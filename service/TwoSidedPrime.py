@@ -25,7 +25,7 @@ def check_two_sided_prime(num: int):
 
 
 def check_prime(num):
-    for i in range(2, floor(sqrt(num)+1)):
+    for i in range(2, floor(sqrt(num))+1):
         if num % i == 0:
             return False
     return True
