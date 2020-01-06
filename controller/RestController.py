@@ -9,5 +9,5 @@ from service.TwoSidedPrime import check_two_sided_prime
 
 
 def two_sided_prime(num: int):
-    return jsonify({'Two Sided Prime':check_two_sided_prime(num)})
+    return jsonify({'Two Sided Prime': check_two_sided_prime(num)})
 

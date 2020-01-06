@@ -6,19 +6,26 @@ from math import floor
 # call other service functions (if required) to execute business logic
 # return evaluated result back to controller function
 # obtain all possible numbers by left and right-truncation
+from Exception.InvalidInputError import InvalidInputError
 
 
 def check_two_sided_prime(num: int):
-    test_str = str(num)
-    length = len(test_str)
-    for i in range(length):
-        temp = int(test_str[i:length])
-        if not (check_prime(temp)):
-            return False
-        temp = int(test_str[0:length-i])
-        if not (check_prime(temp)):
-            return False
-    return True
+    try:
+        if num <= 1:
+            raise InvalidInputError
+        test_str = str(num)
+        length = len(test_str)
+        for i in range(length):
+            temp = int(test_str[i:length])
+            if not (check_prime(temp)):
+                return False
+            temp = int(test_str[0:length-i])
+            if not (check_prime(temp)):
+                return False
+        return True
+    # Value of Exception is stored in error
+    except InvalidInputError as error:
+        return "Invalid Input. Try again! ", error.value
 
 
 # check whether each number (original, left-truncated and right-truncated) is prime
